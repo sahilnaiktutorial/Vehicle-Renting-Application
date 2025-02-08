@@ -1,4 +1,39 @@
 package com.jsp.vra.entity;
 
-public class User {
+import com.jsp.vra.enums.Role;
+import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Entity
+@Builder
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+public class User{
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int userId;
+
+    private String username;
+    private String email;
+    private  String phoneNumber;
+    private  String password;
+
+    @Enumerated(EnumType.STRING)
+    private Role role;
+//    private Image profilePicture;
+
+
+//    @OneToMany(mappedBy = "user",fetch = FetchType.EAGER)
+//   private List<Booking> bookingList;
+//    @OneToMany(mappedBy = "user",fetch = FetchType.LAZY)
+//    private List<Review> reviewList;
+//    @OneToMany(mappedBy = "user",fetch = FetchType.EAGER)
+//    private List<VehicleListing> vehicleListingList;
+
+
 }
