@@ -1,4 +1,14 @@
 package com.jsp.vra.utility;
 
-public class ErrorStructure {
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+
+@Builder
+@Data
+@AllArgsConstructor
+public class ErrorStructure <T>{
+    private int status;
+    private String message;
+    private T rootCause;
 }

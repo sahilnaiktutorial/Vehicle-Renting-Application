@@ -25,8 +25,11 @@ public class User{
 
     @Enumerated(EnumType.STRING)
     private Role role;
-//    private Image profilePicture;
 
+    // to add image to the database
+//    private String imageName;
+//    private String imageType;
+//    private byte[] imageData;
 
 //    @OneToMany(mappedBy = "user",fetch = FetchType.EAGER)
 //   private List<Booking> bookingList;

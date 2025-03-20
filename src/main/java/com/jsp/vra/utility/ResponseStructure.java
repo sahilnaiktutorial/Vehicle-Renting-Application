@@ -1,4 +1,13 @@
 package com.jsp.vra.utility;
 
-public class ResponseStructure {
+
+import lombok.Builder;
+import lombok.Data;
+
+@Data
+@Builder
+public class ResponseStructure <T>{
+    int status;
+    String message;
+    T data;
 }
