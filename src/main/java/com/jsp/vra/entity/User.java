@@ -24,8 +24,6 @@ public class User{
     private String email;
     private  String phoneNumber;
     private  String password;
-
-    @Enumerated(EnumType.STRING)
     private Role role;
 
     // to add image to the database
@@ -38,7 +36,7 @@ public class User{
 //    @OneToMany(mappedBy = "user",fetch = FetchType.LAZY)
 //    private List<Review> reviewList;
     @OneToOne(mappedBy = "rentingPartner")
-    private List<VehicleListing> vehicleListingList;
+    private VehicleListing vehicleListing;
 
 
 }

@@ -22,18 +22,18 @@ public class VehicleController {
     @PostMapping("/vehicles")
     ResponseEntity<ResponseStructure<VehicleResponse>> addVehicle(@RequestBody VehicleRequest vehicleRequest){
         VehicleResponse vehicleResponse = vehicleService.addVehicle(vehicleRequest);
-        return restResponseBuilder.success(HttpStatus.ACCEPTED.value(), "vehicle Added", vehicleResponse);
+        return restResponseBuilder.success(HttpStatus.ACCEPTED.value(), "vehicles Added", vehicleResponse);
     }
 
     @PutMapping("/vehicles/{vehicleId}")
     ResponseEntity<ResponseStructure<VehicleResponse>> updateVehicle(@RequestBody VehicleRequest vehicleRequest, @PathVariable int vehicleId){
         VehicleResponse vehicleResponse = vehicleService.updateVehicle(vehicleRequest,vehicleId);
-        return restResponseBuilder.success(HttpStatus.ACCEPTED.value(), "vehicle Updated", vehicleResponse);
+        return restResponseBuilder.success(HttpStatus.ACCEPTED.value(), "vehicles Updated", vehicleResponse);
     }
 
     @DeleteMapping("/vehicles/{vehicleId}")
     ResponseEntity<ResponseStructure<VehicleResponse>> deleteVehicle(@PathVariable int vehicleId){
         VehicleResponse vehicleResponse = vehicleService.deleteVehicle(vehicleId);
-        return restResponseBuilder.success(HttpStatus.ACCEPTED.value(), "vehicle Deleted", vehicleResponse);
+        return restResponseBuilder.success(HttpStatus.ACCEPTED.value(), "vehicles Deleted", vehicleResponse);
     }
 }

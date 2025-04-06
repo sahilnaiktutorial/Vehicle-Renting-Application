@@ -2,6 +2,7 @@ package com.jsp.vra.controller;
 
 import com.jsp.vra.requestdto.UserRequest;
 import com.jsp.vra.responsedto.UserResponse;
+import com.jsp.vra.responsedto.VehicleResponse;
 import com.jsp.vra.service.UserService;
 import com.jsp.vra.utility.ResponseStructure;
 import com.jsp.vra.utility.RestResponseBuilder;
@@ -34,6 +35,10 @@ public class UserController {
         return restResponseBuilder.success(HttpStatus.ACCEPTED.value(), "Customer Added", userResponse);
     }
 
-
+    @DeleteMapping("/customers/{userId}")
+    ResponseEntity<ResponseStructure<UserResponse>> deleteCustomer(@PathVariable int userId){
+        UserResponse userResponse = userService.deleteCustomer(userId);
+        return restResponseBuilder.success(HttpStatus.ACCEPTED.value(), "vehicles Deleted", userResponse);
+    }
 
 }

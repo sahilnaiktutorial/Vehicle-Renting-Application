@@ -37,6 +37,15 @@ public class UserServiceImpl implements UserService {
         return getUserResponse(user1);
     }
 
+    @Override
+    public UserResponse deleteCustomer(int userId) {
+
+         User user = userRepository.findById(userId)
+                 .orElseThrow(()->new UserNotFoundByIdException("Fail to find user"));
+        userRepository.delete(user);
+        return getUserResponse(user);
+    }
+
     private UserResponse getUserResponse(User user) {
         return UserResponse.builder()
                 .email(user.getEmail())

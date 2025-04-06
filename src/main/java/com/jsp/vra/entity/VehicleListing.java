@@ -2,9 +2,7 @@ package com.jsp.vra.entity;
 
 
 import com.jsp.vra.enums.SeatingType;
-import jakarta.persistence.Entity;
-import jakarta.persistence.OneToMany;
-import jakarta.persistence.OneToOne;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -18,8 +16,10 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 public class VehicleListing {
-
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     int listingId;
+
     String vehicleNo;
     Double pricePerDay;
     SeatingType seating;

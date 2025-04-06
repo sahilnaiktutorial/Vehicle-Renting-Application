@@ -9,4 +9,6 @@ public interface UserService {
 UserResponse addCustomer(UserRequest userRequest);
 
     UserResponse updateCustomer(UserRequest userRequest,int userId);
+
+    UserResponse deleteCustomer(int userId);
 }
