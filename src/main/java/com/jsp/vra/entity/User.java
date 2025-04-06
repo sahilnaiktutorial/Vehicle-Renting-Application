@@ -7,6 +7,8 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 @Entity
 @Builder
 @Data
@@ -35,8 +37,8 @@ public class User{
 //   private List<Booking> bookingList;
 //    @OneToMany(mappedBy = "user",fetch = FetchType.LAZY)
 //    private List<Review> reviewList;
-//    @OneToMany(mappedBy = "user",fetch = FetchType.EAGER)
-//    private List<VehicleListing> vehicleListingList;
+    @OneToOne(mappedBy = "rentingPartner")
+    private List<VehicleListing> vehicleListingList;
 
 
 }
