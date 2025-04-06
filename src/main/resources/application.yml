@@ -1,0 +1,18 @@
+
+spring:
+  application:
+    name: Vehicle-Rental-Application
+  datasource:
+    username: root
+    password: 1234
+    url: jdbc:mysql://localhost:3306/Vehicle_rent?createDatabaseIfNotExist=true
+  jpa:
+    show-sql: true
+    hibernate:
+        ddl-auto: update
+    properties:
+      hibernate:
+        format_sql: true
+
+server:
+  port: 8081
